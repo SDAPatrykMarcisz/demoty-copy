@@ -5,7 +5,7 @@ import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = ValueInValidator.class)
+@Constraint(validatedBy = VoteTypeValidator.class)
 @Target( { ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface VoteValidType {

@@ -5,7 +5,7 @@ import com.copy.demotywatorycopy.model.votes.VoteType;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class ValueInValidator implements ConstraintValidator<VoteValidType, String> {
+public class VoteTypeValidator implements ConstraintValidator<VoteValidType, String> {
 
 
     @Override
