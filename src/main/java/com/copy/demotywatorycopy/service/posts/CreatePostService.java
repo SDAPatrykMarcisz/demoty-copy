@@ -1,10 +1,10 @@
-package com.copy.demotywatorycopy.service;
+package com.copy.demotywatorycopy.service.posts;
 
 import com.copy.demotywatorycopy.model.posts.CreatePostRequest;
 import com.copy.demotywatorycopy.model.posts.CreatePostResponse;
 import com.copy.demotywatorycopy.repository.PostsRepository;
 import com.copy.demotywatorycopy.repository.dao.PostEntity;
-import com.copy.demotywatorycopy.service.converters.CreatePostsConverter;
+import com.copy.demotywatorycopy.service.converters.posts.CreatePostsConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

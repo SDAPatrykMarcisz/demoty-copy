@@ -1,10 +1,10 @@
 package com.copy.demotywatorycopy.controller;
 
 import com.copy.demotywatorycopy.model.posts.*;
-import com.copy.demotywatorycopy.service.CreatePostService;
-import com.copy.demotywatorycopy.service.DeletePostService;
-import com.copy.demotywatorycopy.service.GetPostService;
-import com.copy.demotywatorycopy.service.UpdatePostService;
+import com.copy.demotywatorycopy.service.posts.CreatePostService;
+import com.copy.demotywatorycopy.service.posts.DeletePostService;
+import com.copy.demotywatorycopy.service.posts.GetPostService;
+import com.copy.demotywatorycopy.service.posts.UpdatePostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

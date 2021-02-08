@@ -1,4 +1,4 @@
-package com.copy.demotywatorycopy.service;
+package com.copy.demotywatorycopy.service.posts;
 
 import com.copy.demotywatorycopy.model.posts.UpdatePostResponse;
 import com.copy.demotywatorycopy.repository.PostsRepository;

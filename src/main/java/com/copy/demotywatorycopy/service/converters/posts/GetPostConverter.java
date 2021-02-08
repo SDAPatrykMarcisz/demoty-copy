@@ -1,4 +1,4 @@
-package com.copy.demotywatorycopy.service.converters;
+package com.copy.demotywatorycopy.service.converters.posts;
 
 import com.copy.demotywatorycopy.model.posts.GetPostResponse;
 import com.copy.demotywatorycopy.repository.dao.PostEntity;
