@@ -4,6 +4,7 @@ import com.copy.demotywatorycopy.model.posts.GetAllPostResponse;
 import com.copy.demotywatorycopy.model.posts.GetPostResponse;
 import com.copy.demotywatorycopy.repository.PostsRepository;
 import com.copy.demotywatorycopy.repository.dao.PostEntity;
+import com.copy.demotywatorycopy.service.converters.GetPostConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,14 +18,14 @@ public class GetPostService {
     private final GetPostConverter getPostConverter;
 
     public GetPostResponse getById(Long postId) {
-        PostEntity postEntity = postsRepository.findById(postId).orElseThrow(() -> new RuntimeException());
+        PostEntity postEntity = postsRepository.findById(postId).orElseThrow(RuntimeException::new);
         return getPostConverter.toDto(postEntity);
     }
 
     public GetAllPostResponse getAll() {
         return GetAllPostResponse.builder()
                 .posts(postsRepository.findAll().stream()
-                .map(entity -> getPostConverter.toDto(entity))
+                .map(getPostConverter::toDto)
                 .collect(Collectors.toList()))
                 .build();
     }

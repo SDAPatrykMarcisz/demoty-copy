@@ -15,8 +15,8 @@ public class UpdatePostService {
     private final PostsRepository postsRepository;
     private final UpdatePostsConverter updatePostsConverter;
 
-    public UpdatePostResponse update(UpdatePostRequest request, Long id){
-        PostEntity entityToUpdate = postsRepository.findById(id).orElseThrow(() -> new RuntimeException());
+    public UpdatePostResponse update(UpdatePostRequest request, Long id) {
+        PostEntity entityToUpdate = postsRepository.findById(id).orElseThrow(RuntimeException::new);
         entityToUpdate.setTopText(request.getTopText());
         entityToUpdate.setBottomText(request.getBottomText());
         entityToUpdate.setImagePath(request.getImagePath());
