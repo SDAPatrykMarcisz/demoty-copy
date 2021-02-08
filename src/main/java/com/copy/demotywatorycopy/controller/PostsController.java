@@ -2,6 +2,7 @@ package com.copy.demotywatorycopy.controller;
 
 import com.copy.demotywatorycopy.model.posts.CreatePostRequest;
 import com.copy.demotywatorycopy.model.posts.CreatePostResponse;
+import com.copy.demotywatorycopy.model.posts.GetAllPostResponse;
 import com.copy.demotywatorycopy.model.posts.GetPostResponse;
 import com.copy.demotywatorycopy.service.CreatePostService;
 import com.copy.demotywatorycopy.service.GetPostService;
@@ -31,4 +32,9 @@ public class PostsController {
         return getPostService.getById(postId);
     }
 
+    @GetMapping(path = "/posts")
+    @ResponseStatus(HttpStatus.OK)
+    public GetAllPostResponse getAllPost(){
+        return getPostService.getAll();
+    }
 }
