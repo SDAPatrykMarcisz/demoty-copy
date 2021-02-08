@@ -1,6 +1,5 @@
 package com.copy.demotywatorycopy.service.posts;
 
-import com.copy.demotywatorycopy.model.posts.UpdatePostResponse;
 import com.copy.demotywatorycopy.repository.PostsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

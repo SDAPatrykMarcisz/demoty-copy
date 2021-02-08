@@ -1,7 +1,5 @@
 package com.copy.demotywatorycopy.service.converters.posts;
 
-import com.copy.demotywatorycopy.model.posts.CreatePostRequest;
-import com.copy.demotywatorycopy.model.posts.CreatePostResponse;
 import com.copy.demotywatorycopy.model.posts.UpdatePostRequest;
 import com.copy.demotywatorycopy.model.posts.UpdatePostResponse;
 import com.copy.demotywatorycopy.repository.dao.PostEntity;

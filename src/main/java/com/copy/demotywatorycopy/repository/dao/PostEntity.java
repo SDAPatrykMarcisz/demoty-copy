@@ -3,6 +3,7 @@ package com.copy.demotywatorycopy.repository.dao;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -22,5 +23,8 @@ public class PostEntity {
 
     @Column(name = "image_path")
     private String imagePath;
+
+    @OneToMany(mappedBy = "post")
+    private List<VoteEntity> votes;
 
 }
