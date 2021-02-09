@@ -25,8 +25,8 @@ public class GetPostService {
     public GetAllPostResponse getAll() {
         return GetAllPostResponse.builder()
                 .posts(postsRepository.findAll().stream()
-                .map(getPostConverter::toDto)
-                .collect(Collectors.toList()))
+                        .map(getPostConverter::toDto)
+                        .collect(Collectors.toList()))
                 .build();
     }
 }

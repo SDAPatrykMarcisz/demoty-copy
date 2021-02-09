@@ -27,7 +27,6 @@ public class CreateUserConverter implements Convertable<CreateUserRequest, UserE
         UserEntity userEntity = new UserEntity();
         userEntity.setUsername(registerRequest.getUsername());
         userEntity.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
-        userEntity.setActive(registerRequest.isActive());
         List<AuthorityEntity> authorities = Optional.ofNullable(registerRequest.getRoles()).map(roles -> roles.stream()
                 .map(str -> authoritiesRepository.findByAuthority("ROLE_" + str).orElseThrow(RuntimeException::new))
                 .collect(Collectors.toList())
