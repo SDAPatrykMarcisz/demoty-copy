@@ -5,7 +5,7 @@ import com.copy.demotywatorycopy.model.comments.GetCommentResponse;
 import com.copy.demotywatorycopy.repository.CommentsRepository;
 import com.copy.demotywatorycopy.repository.PostsRepository;
 import com.copy.demotywatorycopy.repository.dao.PostEntity;
-import com.copy.demotywatorycopy.service.converters.GetCommentConverter;
+import com.copy.demotywatorycopy.service.converters.comments.GetCommentConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
