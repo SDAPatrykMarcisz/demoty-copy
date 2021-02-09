@@ -1,4 +1,4 @@
-package com.copy.demotywatorycopy.controller;
+package com.copy.demotywatorycopy.config;
 
 
 import com.copy.demotywatorycopy.repository.dao.AuthorityEntity;
@@ -16,7 +16,7 @@ import java.util.Arrays;
 @Service
 @RequiredArgsConstructor
 @Profile("inMemoryDatabase")
-public class RolesProvider implements CommandLineRunner {
+public class H2DatabaseRolesProvider implements CommandLineRunner {
 
     private final AuthoritiesRepository authoritiesRepository;
     private final UsersRepository usersRepository;

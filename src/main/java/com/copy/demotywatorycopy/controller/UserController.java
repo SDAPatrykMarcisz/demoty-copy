@@ -1,10 +1,13 @@
 package com.copy.demotywatorycopy.controller;
 
+import com.copy.demotywatorycopy.model.users.ChangePasswordRequest;
 import com.copy.demotywatorycopy.model.users.CreateUserRequest;
 import com.copy.demotywatorycopy.model.users.CreateUserResponse;
 import com.copy.demotywatorycopy.model.users.GetAllUsersResponse;
 import com.copy.demotywatorycopy.security.annotations.AllowedForAdmin;
+import com.copy.demotywatorycopy.security.annotations.PasswordOwnerOrAdmin;
 import com.copy.demotywatorycopy.service.ActivateUserService;
+import com.copy.demotywatorycopy.service.users.ChangePasswordService;
 import com.copy.demotywatorycopy.service.users.CreateUserService;
 import com.copy.demotywatorycopy.service.users.GetUsersService;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +25,7 @@ public class UserController {
     private final CreateUserService createUserService;
     private final ActivateUserService activateUserService;
     private final GetUsersService getUsersService;
+    private final ChangePasswordService changePasswordService;
 
     @PostMapping
     public CreateUserResponse registerUser(@Valid @RequestBody CreateUserRequest registerRequest) {
@@ -35,10 +39,17 @@ public class UserController {
     }
 
     @AllowedForAdmin
-    @PutMapping("/activate/{userId}")
+    @PutMapping("{userId}/activate/")
     public void activateUser(@PathVariable(name = "userId") Long id) {
         activateUserService.byId(id);
     }
+
+    @PasswordOwnerOrAdmin
+    @PutMapping("/{userId}/password")
+    public void changePassword(@PathVariable(name = "userId") Long userId, @RequestBody ChangePasswordRequest request){
+        changePasswordService.changePasswordForUser(userId, request);
+    }
+
 
 
 }
