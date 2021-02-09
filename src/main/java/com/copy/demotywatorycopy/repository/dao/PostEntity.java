@@ -27,4 +27,7 @@ public class PostEntity {
     @OneToMany(mappedBy = "post")
     private List<VoteEntity> votes;
 
+    @OneToMany(mappedBy = "post")
+    private  List<CommentEntity> comments;
+
 }
