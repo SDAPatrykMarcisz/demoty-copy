@@ -21,6 +21,7 @@ public class GetUsersConverter implements Convertable<Void, UserEntity, UserInfo
         return UserInfoResponse.builder()
                 .username(userEntity.getUsername())
                 .mail(userEntity.getMail())
+                .active(userEntity.isActive())
                 .roles(userEntity.getAuthorities().stream().map(AuthorityEntity::getAuthority).collect(Collectors.toList()))
                 .build();
     }

@@ -23,6 +23,4 @@ public class CreateUserRequest {
     @NotNull
     private String mail;
 
-    private List<String> roles;
-
 }

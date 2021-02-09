@@ -10,5 +10,6 @@ import java.util.List;
 public class UserInfoResponse {
     private String username;
     private String mail;
+    private boolean active;
     private List<String> roles;
 }
