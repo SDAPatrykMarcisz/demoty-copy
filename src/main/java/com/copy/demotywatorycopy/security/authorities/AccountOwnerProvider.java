@@ -25,6 +25,7 @@ public class AccountOwnerProvider implements AuthorityProvider {
         Optional<Long> id = Optional.ofNullable(request.getRequestURI())
                 .map(uri -> uri.replaceAll("/api/users/([1-9]+)", "$1"))
                 .filter(str -> !str.isBlank())
+                .filter(str -> str.matches("[1-9]+"))
                 .map(Long::valueOf);
 
         if(id.isPresent() && userEntity.getId().equals(id.get())){

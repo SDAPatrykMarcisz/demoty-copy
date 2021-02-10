@@ -17,7 +17,7 @@ public class PasswordOwnerProvider implements AuthorityProvider {
     @Override
     public boolean canHandle(HttpServletRequest request) {
         AntPathMatcher matcher = new AntPathMatcher();
-        return matcher.match("/api/users/password/*", request.getRequestURI());
+        return matcher.match("/api/users/password/*", request.getRequestURI()) && !"GET".equals(request.getMethod());
     }
 
     @Override
@@ -25,6 +25,7 @@ public class PasswordOwnerProvider implements AuthorityProvider {
         Optional<Long> id = Optional.ofNullable(request.getRequestURI())
                 .map(uri -> uri.replaceAll("/api/users/([1-9]+)/password", "$1"))
                 .filter(str -> !str.isBlank())
+                .filter(str -> str.matches("[1-9]+"))
                 .map(Long::valueOf);
 
         if(id.isPresent() && userEntity.getId().equals(id.get())){

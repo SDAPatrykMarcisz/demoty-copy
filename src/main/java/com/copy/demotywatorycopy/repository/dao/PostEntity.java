@@ -24,10 +24,14 @@ public class PostEntity {
     @Column(name = "image_path")
     private String imagePath;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private UserEntity user;
+
     @OneToMany(mappedBy = "post")
     private List<VoteEntity> votes;
 
     @OneToMany(mappedBy = "post")
-    private  List<CommentEntity> comments;
+    private List<CommentEntity> comments;
 
 }

@@ -1,6 +1,8 @@
 package com.copy.demotywatorycopy.controller;
 
 import com.copy.demotywatorycopy.model.posts.*;
+import com.copy.demotywatorycopy.security.annotations.IsLoggedUser;
+import com.copy.demotywatorycopy.security.annotations.PostOwnerOrAdmin;
 import com.copy.demotywatorycopy.service.posts.CreatePostService;
 import com.copy.demotywatorycopy.service.posts.DeletePostService;
 import com.copy.demotywatorycopy.service.posts.GetPostService;
@@ -23,6 +25,7 @@ public class PostsController {
     private final UpdatePostService updatePostService;
     private final DeletePostService deletePostService;
 
+    @IsLoggedUser
     @PostMapping(path = "/posts")
     @ResponseStatus(HttpStatus.CREATED)
     public CreatePostResponse createPost(@Valid @RequestBody CreatePostRequest request) {
@@ -41,12 +44,14 @@ public class PostsController {
         return getPostService.getAll();
     }
 
+    @PostOwnerOrAdmin
     @PutMapping(path = "/posts/{postId}")
     @ResponseStatus(HttpStatus.OK)
     public UpdatePostResponse updatePost(@Valid @RequestBody UpdatePostRequest request, @PathVariable(name = "postId") Long postId) {
         return updatePostService.update(request, postId);
     }
 
+    @PostOwnerOrAdmin
     @DeleteMapping(path = "/posts/{postId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePost(@PathVariable(name = "postId") Long postId) {
