@@ -12,23 +12,23 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class PasswordOwnerProvider implements AuthorityProvider {
+public class AccountOwnerProvider implements AuthorityProvider {
 
     @Override
     public boolean canHandle(HttpServletRequest request) {
         AntPathMatcher matcher = new AntPathMatcher();
-        return matcher.match("/api/users/password/*", request.getRequestURI());
+        return matcher.match("/api/users/*", request.getRequestURI()) && "DELETE".equals(request.getMethod());
     }
 
     @Override
     public List<String> getAdditionalAuthorities(HttpServletRequest request, UserEntity userEntity) {
         Optional<Long> id = Optional.ofNullable(request.getRequestURI())
-                .map(uri -> uri.replaceAll("/api/users/([1-9]+)/password", "$1"))
+                .map(uri -> uri.replaceAll("/api/users/([1-9]+)", "$1"))
                 .filter(str -> !str.isBlank())
                 .map(Long::valueOf);
 
         if(id.isPresent() && userEntity.getId().equals(id.get())){
-            return Collections.singletonList("PASSWORD_OWNER");
+            return Collections.singletonList("ACCOUNT_OWNER");
         }
 
         return Collections.emptyList();

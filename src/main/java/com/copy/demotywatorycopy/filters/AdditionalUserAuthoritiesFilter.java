@@ -13,7 +13,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
-import javax.servlet.*;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -29,15 +32,21 @@ public class AdditionalUserAuthoritiesFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if(Objects.nonNull(auth)){
+        if (Objects.nonNull(auth)) {
             List<GrantedAuthority> updatedAuthorities = new ArrayList<>(auth.getAuthorities());
-            Optional<UserEntity> byUsername = usersRepository.findByUsername(((UserDetails) auth.getPrincipal()).getUsername());
-            if(byUsername.isPresent()){
-                Collection<String> additionalAuthorities = authoritiesProvider.checkAdditionalAuthorities(byUsername.get());
-                updatedAuthorities.addAll(additionalAuthorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())); //add your role here [e.g., new SimpleGrantedAuthority("ROLE_NEW_ROLE")]
-                Authentication newAuth = new UsernamePasswordAuthenticationToken(auth.getPrincipal(), auth.getCredentials(), updatedAuthorities);
-                SecurityContextHolder.getContext().setAuthentication(newAuth);
-            }
+            Optional.ofNullable(auth.getPrincipal())
+                    .filter(principal -> principal instanceof UserDetails)
+                    .map(principal -> (UserDetails) principal)
+                    .map(UserDetails::getUsername)
+                    .ifPresent(username -> {
+                        Optional<UserEntity> byUsername = usersRepository.findByUsername(username);
+                        if (byUsername.isPresent()) {
+                            Collection<String> additionalAuthorities = authoritiesProvider.checkAdditionalAuthorities(byUsername.get());
+                            updatedAuthorities.addAll(additionalAuthorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+                            Authentication newAuth = new UsernamePasswordAuthenticationToken(auth.getPrincipal(), auth.getCredentials(), updatedAuthorities);
+                            SecurityContextHolder.getContext().setAuthentication(newAuth);
+                        }
+                    });
         }
         filterChain.doFilter(servletRequest, servletResponse);
     }
