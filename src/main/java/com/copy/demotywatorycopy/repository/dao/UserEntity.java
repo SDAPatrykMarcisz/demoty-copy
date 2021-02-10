@@ -21,5 +21,8 @@ public class UserEntity {
     @ManyToMany
     private List<AuthorityEntity> authorities;
 
+    @OneToMany(mappedBy = "user")
+    private List<CommentEntity> comments;
+
 }
 

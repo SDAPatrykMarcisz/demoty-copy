@@ -18,6 +18,10 @@ public class CommentEntity {
     @JoinColumn(name = "postId")
     private PostEntity post;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private UserEntity user;
+
     @Column(name = "content")
     private String content;
 
