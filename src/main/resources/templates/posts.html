@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Demoty</title>
+    <!--    <link rel="stylesheet" href="/webjars/bootstrap/4.6.0/css/bootstrap.min.css">-->
+    <!--    <script src="/webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>-->
+</head>
+<body style="background: #2D2121">
+<div th:each="post : ${posts}"  style="color: white; text-align: center; background-color: black; width: 800px; padding: 30px; margin: auto">
+    <h2 th:text="${post.topText}"></h2>
+    <img th:src="@{${post.imagePath}}" style="width:600px">
+    <h2 th:text="${post.bottomText}"></h2>
+</div>
+</body>
+</html>

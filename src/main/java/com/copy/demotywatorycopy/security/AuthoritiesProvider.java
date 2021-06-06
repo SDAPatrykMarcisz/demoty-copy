@@ -1,6 +1,7 @@
-package com.copy.demotywatorycopy.security.authorities;
+package com.copy.demotywatorycopy.security;
 
 import com.copy.demotywatorycopy.repository.dao.UserEntity;
+import com.copy.demotywatorycopy.security.authorities.AuthorityProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

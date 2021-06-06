@@ -3,7 +3,6 @@ package com.copy.demotywatorycopy.security;
 import com.copy.demotywatorycopy.repository.dao.AuthorityEntity;
 import com.copy.demotywatorycopy.repository.dao.UserEntity;
 import com.copy.demotywatorycopy.repository.UsersRepository;
-import com.copy.demotywatorycopy.security.authorities.AuthoritiesProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.userdetails.User;
@@ -24,7 +23,6 @@ import java.util.stream.Collectors;
 public class CustomUserDetails implements UserDetailsService {
 
     private final UsersRepository usersRepository;
-    private final AuthoritiesProvider authoritiesProvider;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

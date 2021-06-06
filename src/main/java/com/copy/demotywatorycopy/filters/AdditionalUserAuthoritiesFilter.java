@@ -2,7 +2,7 @@ package com.copy.demotywatorycopy.filters;
 
 import com.copy.demotywatorycopy.repository.UsersRepository;
 import com.copy.demotywatorycopy.repository.dao.UserEntity;
-import com.copy.demotywatorycopy.security.authorities.AuthoritiesProvider;
+import com.copy.demotywatorycopy.security.AuthoritiesProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

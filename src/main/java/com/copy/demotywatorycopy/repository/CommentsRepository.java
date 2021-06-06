@@ -3,6 +3,7 @@ package com.copy.demotywatorycopy.repository;
 import com.copy.demotywatorycopy.repository.dao.CommentEntity;
 import com.copy.demotywatorycopy.repository.dao.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
