@@ -15,7 +15,6 @@ import java.util.Arrays;
 
 @Service
 @RequiredArgsConstructor
-@Profile("inMemoryDatabase")
 public class H2DatabaseRolesProvider implements CommandLineRunner {
 
     private final AuthoritiesRepository authoritiesRepository;
@@ -23,7 +22,7 @@ public class H2DatabaseRolesProvider implements CommandLineRunner {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         AuthorityEntity adminRole = new AuthorityEntity();
         adminRole.setAuthority("ROLE_ADMIN");
         adminRole = authoritiesRepository.save(adminRole);
