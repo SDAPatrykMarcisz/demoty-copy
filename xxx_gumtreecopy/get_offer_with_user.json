@@ -1,0 +1,16 @@
+//https://www.gumtree.pl/a-literatura/krakow/ksiazka-nowa-bracia-karamazow-fiodor-dostojewski/1005557590290910467970509
+
+// GET api/offers/1005557590290910467970509
+
+{
+  "id": 1005557590290910467970509,
+  "title": "książka nowa ! \"BRACIA KARAMAZOW\" Fiodor Dostojewski ",
+  "price": 5000,
+  "categoryId" : 12,
+  "publishDate": "30/07/2019",
+  "localization": "Kraków, Małopolskie",
+  "description": "cena z okładki 69,90zł\n\nWydawnictwo ZNAK \n\nseria 50na50 czyli 50 książek na 50-lecie ZNAKU\n\nNajlepszy przewodnik po świecie literatury. Wybitni autorzy, ważne dzieła. Te dobrze znane i te niesłusznie zapomniane. Kultowe, prowokacyjne i refleksyjne. Seria 50na50 to książki, które po prostu należy znać.\n\ntwarda okładka, 968 stron\n\nJedno z największych dzieł w historii literatury\n\nBracia Karamazow to ostatnia i najdojrzalsza powieść Fiodora Dostojewskiego. Opowiada dzieje czterech braci, których łączy tragedia: zabójstwo ojca. Każdy z nich, obciążony własnymi winami, kierowany emocjami i pożądaniem, na swój sposób usiłuje odnaleźć miejsce w mrocznej mozaice rodziny Karamazowów. \n\nPowieść rosyjskiego mistrza jest uznawana za jedno z największych dzieł w historii literatury. Obok wątków obyczajowych porusza fundamentalne problemy, z którymi zmaga się ludzkość: pytanie o istnienie Boga w racjonalnym świecie, trwałość wartości w obliczu zmian i nieświadome krążenie człowieka między złem i pokutą. Nowy kongenialny przekład Adama Pomorskiego wraz z komentarzami i posłowiem pozwala polskiemu czytelnikowi w pełni rozsmakować się w rozległej panoramie powieści.",
+  "userId": 12345
+}
+
+

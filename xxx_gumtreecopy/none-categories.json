@@ -1,0 +1,11 @@
+// GET /api/categories/literatura
+
+{
+  "categories": [
+    {
+      "mainCategoryName": "literatura",
+      "subcategories": []
+    }
+  ]
+}
+

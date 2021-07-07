@@ -1,0 +1,11 @@
+//POST /api/users
+
+{
+  "username": "user",
+  "email": "user@user.pl",
+  "password" : "password"
+}
+
+
+
+

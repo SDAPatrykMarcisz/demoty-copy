@@ -1,0 +1,29 @@
+{
+  "category": "książki",
+  "offers": [
+    {
+      "id": 1005557590290910467970509,
+      "title": "książka nowa ! \"BRACIA KARAMAZOW\" Fiodor Dostojewski ",
+      "price": 5000,
+      "description": "cena z okładki 69,90zł\n\nWydawnictwo ZNAK \n\nseria ...",
+      "localization": "Kraków",
+      "parentCategory": "albumy i sztuka"
+    },
+    {
+      "id": 1003556843030910467970509,
+      "title": "\"HOMER I EPOKA HEROICZNA\" J.V. Luce",
+      "price": 1500,
+      "description": "Wydawnictwa Artystyczne i Filmowe\n\nWarszawa 1987...",
+      "localization": "Kraków",
+      "parentCategory": "literatura"
+    },
+    {
+      "id": 1001306617080910467970509,
+      "title": "ks. Józef Tischner \"HISTORIA FILOZOFII PO GÓRALSKU\" ",
+      "price": 3000,
+      "description": "wydawnictwo ZNAK\ntwarda oprawa\nstron 110 „Na pocątku wsędy...",
+      "localization": "Kraków",
+      "parentCategory": "inne książki"
+    }
+  ]
+}

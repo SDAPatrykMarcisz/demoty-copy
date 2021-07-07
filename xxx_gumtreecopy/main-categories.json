@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "mainCategoryName": "Nieruchomości",
+      "subcategories": [
+        {
+          "subcategoryName": "pokoje do wynajęcia"
+        },
+        {
+          "subcategoryName": "mieszkania i domy do wynajęcia"
+        },
+        {
+          "subcategoryName": "mieszkania i domy - sprzedam"
+        }
+      ]
+    },
+    {
+      "mainCategoryName": "Dom i Ogród",
+      "subcategories": [
+        {
+          "subcategoryName": "AGD"
+        },
+        {
+          "subcategoryName": "meble"
+        },
+        {
+          "subcategoryName": "narzędzia i materiały budowlane"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
